@@ -8,7 +8,7 @@ Framework for spec-driven software development with AI agent teams on Claude Cod
 
 ```bash
 # 1. Clone the framework
-git clone <your-repo-url> ~/.sdd-framework
+git clone https://github.com/mikall/FactoryX.git ~/.sdd-framework
 
 # 2. Make the installer executable
 chmod +x ~/.sdd-framework/install.sh
