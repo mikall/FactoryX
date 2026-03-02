@@ -40,6 +40,7 @@ Everyone reads:
 3. `analysis/technical-analysis.md` (in-scope sections)
 4. `analysis/principles.md`
 5. `analysis/risk-register.md` (active risks relevant to this sprint)
+6. `analysis/lessons-learned.md` (relevant entries from previous sprints)
 
 Alignment on: questions, dependencies, execution order.
 
@@ -223,6 +224,15 @@ In `test/testbook.md`, update:
 ### What to improve
 ```
 
+#### 5.5 Update Lessons Learned
+
+After generating the Final Report, update `analysis/lessons-learned.md`:
+
+1. **What Worked**: extract from retrospective "What worked well" — add entries with concrete rationale
+2. **What Didn't Work**: extract from retrospective "What to improve" + root causes from resolved bugs and failed tests — focus on systemic patterns, not one-off issues
+3. **Improvement Actions**: define concrete actions for future sprints, assign owner, set status to "Pending"
+4. **Update existing actions**: mark previously "Pending" actions as "Done" if they were applied in this sprint
+
 ---
 
 ## Closure Checklist
@@ -249,6 +259,7 @@ In `test/testbook.md`, update:
 - [ ] Master docs updated
 - [ ] Traceability updated
 - [ ] Changelog updated
+- [ ] `analysis/lessons-learned.md` updated (what worked, what didn't, improvement actions)
 
 **Risk Register**:
 - [ ] `analysis/risk-register.md` updated (new risks identified, resolved risks closed, mitigations reviewed)

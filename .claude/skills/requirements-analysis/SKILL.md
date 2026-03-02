@@ -31,7 +31,8 @@ Invoke with `/requirements-analysis` when:
 1. Read the sprint roadmap
 2. Read `requirements/requirements-list.md`
 3. Read current master documents
-4. Identify scope: features and requirements in perimeter
+4. Read `analysis/lessons-learned.md` — check for relevant entries (spec-related anti-patterns, recurring ambiguity issues, improvement actions tagged as "Specs" or "Architecture")
+5. Identify scope: features and requirements in perimeter
 
 **Output**: In-scope feature list with references (FR-xxx)
 

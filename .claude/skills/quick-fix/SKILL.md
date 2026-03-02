@@ -110,7 +110,12 @@ Verify only:
 | New TC Added | TC-XXX (if applicable) |
 | Risk Registered | [risk ID if systemic issue, or N/A] |
 | Anti-pattern Identified | [pattern that caused the defect — to be added to module anti-patterns during next `/requirements-analysis`] |
+| Lesson Learned | [systemic insight, if any — added to `analysis/lessons-learned.md`] |
 ```
+
+6. **Update Lessons Learned** (if the root cause reveals a systemic pattern):
+   - Add entry to `analysis/lessons-learned.md` under **What Didn't Work** with root cause and "Avoid By" action
+   - If a new practice proved effective during the fix, add it to **What Worked**
 
 ---
 

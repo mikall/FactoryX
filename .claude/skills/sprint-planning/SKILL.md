@@ -26,6 +26,17 @@ Invoke with `/sprint-planning` when needed to:
 
 ## Workflow
 
+### PHASE 0: Lessons Learned Review
+
+**Before planning**, read `analysis/lessons-learned.md` to:
+1. Check **What Didn't Work** — avoid repeating the same mistakes
+2. Check **Improvement Actions** with status "Pending" — incorporate applicable actions into this sprint
+3. Check **What Worked** — replicate successful approaches
+
+Share relevant findings with the team during the Technical Table (Phase 2).
+
+---
+
 ### PHASE 1: Analysis and Prioritization (Product Manager)
 
 **Agent**: `product-manager`

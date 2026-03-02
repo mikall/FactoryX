@@ -61,7 +61,7 @@ sed -e "s/{{PROJECT_NAME}}/$PROJECT_NAME/g" \
     -e "s/{{START_DATE}}/$DATE/g" \
     "$SCRIPT_DIR/templates/project.md" > project.md
 
-for template in principles.md functional-analysis.md technical-analysis.md HLA.md risk-register.md; do
+for template in principles.md functional-analysis.md technical-analysis.md HLA.md risk-register.md lessons-learned.md; do
     sed -e "s/{{PROJECT_NAME}}/$PROJECT_NAME/g" \
         -e "s/{{DATE}}/$DATE/g" \
         "$SCRIPT_DIR/templates/$template" > "analysis/$template"

@@ -95,6 +95,7 @@ When Tier 2 - Governed is selected, the following additional requirements apply:
 │   ├── functional-analysis.md     # Functional analysis (Single Source of Truth)
 │   ├── technical-analysis.md      # Technical analysis + Data Model
 │   ├── risk-register.md           # Risk tracking (updated per sprint)
+│   ├── lessons-learned.md         # Knowledge base: what worked, what didn't (updated per sprint)
 │   └── checklists/                # Thematic quality gates
 │       ├── clarity-gate.md
 │       ├── security.md
@@ -235,6 +236,7 @@ When starting a new session on an existing project:
 - `analysis/technical-analysis.md`
 - `requirements/plan.md`
 - `test/testbook.md`
+- `analysis/lessons-learned.md`
 
 ### Document Size Management
 
