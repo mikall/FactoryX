@@ -64,15 +64,18 @@
 
 ## 4. Regression Suite and Smoke Tests
 
-### 4.1 Smoke Test Suite (execute on every deploy)
+### 4.1 Smoke Test Suite (execute before any other test)
 
-> Minimal tests to verify the system is alive and functional.
+> Fundamental tests to verify the software installs, starts, and responds.
+> These MUST PASS before running any functional, integration, or E2E test.
+> Smoke tests should be executable in any development environment without external dependencies.
 
 | TC | Scenario | Pass Criterion | Max Time |
 |----|----------|---------------|----------|
-| SMOKE-001 | Homepage loads | HTTP 200, FCP < 2s | 5s |
-| SMOKE-002 | Login works | Valid JWT token returned | 3s |
-| SMOKE-003 | API health check | GET /api/v1/health → 200 | 2s |
+| SMOKE-001 | Installation succeeds | Build/install completes with exit code 0 | 60s |
+| SMOKE-002 | Software starts | Entry point runs without crash | 5s |
+| SMOKE-003 | Version/help responds | `--version` or `--help` (or equivalent) returns expected output | 2s |
+| SMOKE-004 | Health check (if applicable) | API health endpoint responds HTTP 200 | 5s |
 
 ### 4.2 Regression Suite (execute every sprint)
 
@@ -100,6 +103,13 @@
 
 ## 5. Test Cases
 
+> **Mode field (mandatory)**: Every test case MUST declare its execution mode at design time:
+> - **Real** — Executed against the actual system/integration
+> - **Stub** — Executed using stubs, mocks, or simulators (document which artifacts are needed in Section 3)
+> - **Skip** — Not executable in this environment/sprint (must have documented justification)
+>
+> This decision is made during testbook design (before implementation), based on what integrations are available in the development environment. If a test requires a stub, the stub must be listed in Section 3 (Test Infrastructure).
+
 ### 5.1 Module: {{MODULE_NAME}}
 
 #### TC-001: {{TEST_NAME}}
@@ -108,6 +118,7 @@
 |-------|-------|
 | **Priority** | P0 / P1 / P2 / P3 |
 | **Type** | Functional / Integration / E2E / Performance |
+| **Mode** | Real / Stub / Skip — _decided during testbook design, before implementation_ |
 | **Automation** | Automated / Manual / Candidate |
 | **Requirements** | FR-001, FR-002 |
 | **Sprint** | S1 |

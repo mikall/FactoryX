@@ -18,6 +18,7 @@
 8. **CONFIRM BEFORE ACTING** - NEVER execute destructive actions (DB, deploy, delete, data modification) without user confirmation.
 9. **GIT: APPROVAL REQUIRED** - NEVER execute git commands without explicit approval. ONE command at a time, show the result, propose the next.
 10. **SHORT ANSWERS** - Few lines, concise. The user asks for details if they want them.
+11. **VERIFY BEFORE PRESENTING** - Never declare "done" without verifying the deliverable works. Smoke test: does it build? does it start? does it respond? Before running build/install/deploy commands, read ALL involved config files (pyproject.toml, package.json, Dockerfile, etc.) and verify the environment. If a command fails, diagnose before retrying.
 
 ### Security, Privacy, and Compliance
 

@@ -44,6 +44,12 @@ Everyone reads:
 
 Alignment on: questions, dependencies, execution order.
 
+7. **Test Scope & Artifacts Review**:
+   - Review testbook: for each test case, confirm the **Mode** (Real / Stub / Skip) is still valid for the current environment
+   - Identify stubs, mocks, or simulators needed for this sprint
+   - If new test infrastructure is required, add it to testbook Section 3 (Test Infrastructure) and plan its implementation as a sprint task
+   - Confirm smoke tests (install, start, respond) are executable as-is
+
 ---
 
 ### PHASE 2: Development
@@ -62,6 +68,12 @@ DB (schema + RLS) ──> Backend (API) ──> Frontend (UI)
 - Implement EXACTLY what's specified
 - Respect documented anti-patterns
 - Economy: minimum code possible
+
+**Smoke Verification** (before code review):
+- The software builds/installs without errors
+- The entry point starts without crash
+- Config files (pyproject.toml, package.json, Dockerfile, etc.) are valid
+- If any smoke check fails → fix before proceeding to code review
 
 **Code Review** (`code-reviewer`):
 - Adversarial review across all 6 dimensions (Spec Adherence, Simplicity & Economy, Security, Performance, HLA Coherence, Error Handling — see `.claude/agents/code-reviewer.md`)
@@ -85,11 +97,11 @@ DB (schema + RLS) ──> Backend (API) ──> Frontend (UI)
 #### 2.3 Fix Cycle
 
 ```
-Code Complete ──> Code Review ──> APPROVED? ──> Test ──> PASS?
-     │                  │                          │
-     │                  └── No ──> Fix ──> Re-review
-     │                                             │
-     │                                    └── No ──> Analysis ──> Fix ──> Retest
+Code Complete ──> Smoke Verify ──> Code Review ──> APPROVED? ──> Test ──> PASS?
+     │                 │                 │                          │
+     │                 └── FAIL ──> Fix  └── No ──> Fix ──> Re-review
+     │                                                             │
+     │                                                    └── No ──> Analysis ──> Fix ──> Retest
      ▼
 Feature Done
 ```
@@ -238,6 +250,8 @@ After generating the Final Report, update `analysis/lessons-learned.md`:
 ## Closure Checklist
 
 **Tests (BLOCKING)**:
+- [ ] Test scope and artifacts reviewed during kick-off (Mode confirmed for each test case)
+- [ ] Smoke tests PASS (install, start, respond) before any other test
 - [ ] Test cases designed from specs BEFORE implementation (completed in `/requirements-analysis` Phase 6-6b)
 - [ ] ALL applicable testbook categories executed (data, API, M2M, human interfaces, business rules, performance, regression)
 - [ ] Test infrastructure used (own DB and services, stubs/simulators for external systems)
