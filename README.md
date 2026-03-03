@@ -109,17 +109,22 @@ Structured documents inspired by BABOK, PMBOK, modern agile frameworks, and Spec
 
 ## Inspirations
 
-- BMAD Method (multi-agent, adversarial review, scale-adaptive)
-- GitHub Spec Kit (constitution, clarity checklists, cross-artifact analysis)
-- Stream Coding (clarity gate, anti-patterns, document architecture)
-- C4 Model (zoomable architecture documentation)
-- arc42 (crosscutting concepts, pragmatic documentation)
+- [BMAD Method](https://github.com/bmad-code-org/BMAD-METHOD) (multi-agent, adversarial review, scale-adaptive)
+- [GitHub Spec Kit](https://github.com/github/spec-kit) (constitution, clarity checklists, cross-artifact analysis)
+- [Stream Coding](https://github.com/frmoretto/stream-coding) (clarity gate, anti-patterns, document architecture)
+- [Clarity Gate](https://github.com/frmoretto/clarity-gate) (epistemic verification, pre-ingestion quality checks)
+- [C4 Model](https://c4model.com/) (zoomable architecture documentation)
+- [arc42](https://arc42.org/) (crosscutting concepts, pragmatic documentation)
 - ISO 31000 (risk management)
 - BABOK (requirements engineering, traceability)
 - PMBOK (project governance, quality management)
 - Agile/Scrum (sprint cycle, iterative delivery)
 - Shape Up (appetite-based planning, hill charts)
 - SRE (error budgets, observability)
+
+## Acknowledgements
+
+Special thanks to [Francesco Marinoni Moretto](https://github.com/frmoretto) for [Stream Coding](https://github.com/frmoretto/stream-coding) and [Clarity Gate](https://github.com/frmoretto/clarity-gate) — two projects that significantly influenced this framework's approach to documentation-driven development and epistemic quality.
 
 ## Contributing
 
