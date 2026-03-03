@@ -7,32 +7,45 @@ Framework for spec-driven software development with AI agent teams on Claude Cod
 ## Installation
 
 ```bash
-# 1. Clone the framework
+# Clone the framework
 git clone https://github.com/mikall/FactoryX.git ~/.sdd-framework
-
-# 2. Make the installer executable
 chmod +x ~/.sdd-framework/install.sh
 ```
 
 ## Quick Start
 
+### Option A: Automatic (recommended)
+
 ```bash
-# 1. Initialize a new project
 cd /path/to/your/project
-~/.sdd-framework/install.sh "ProjectName"
+~/.sdd-framework/install.sh "ProjectName"    # 1. Initialize project structure
+claude                                        # 2. Open Claude Code
+# Then inside Claude Code:
+# /project-bootstrap                         # 3. Process your intake materials
+```
 
-# 2. Open with Claude Code
-claude
+> Drop your project materials (docs, specs, notes, screenshots) into `intake/` before or after running the installer.
 
-# 3. Add your materials to intake/
-# Drop business docs, tech specs, meeting notes, wireframes into intake/ subfolders
+### Option B: Let Claude handle it
 
-# 4. Start working
-# /project-bootstrap     → Process intake/ into structured project context
-# /sprint-planning       → Plan the first sprint
-# /requirements-analysis → Detail requirements
-# /sprint-execution      → Develop and test
-# /quick-fix             → Quick bug fixes
+```bash
+cd /path/to/your/project
+claude                                        # 1. Open Claude Code directly
+# Then inside Claude Code:
+# /project-bootstrap                         # 2. It detects missing setup, runs the installer, then asks you to restart
+```
+
+> `/project-bootstrap` auto-detects if the project hasn't been initialized and runs the installer for you. You'll need to **restart Claude Code once** after the first setup so the skills are loaded.
+
+### Available skills
+
+```
+/project-bootstrap     → Process intake/ into structured project context
+/sprint-planning       → Plan the first sprint
+/requirements-analysis → Detail requirements
+/sprint-execution      → Develop and test
+/quick-fix             → Quick bug fixes
+/help                  → Check project status and suggested next step
 ```
 
 ## What's Included

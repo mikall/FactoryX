@@ -35,6 +35,27 @@ intake/
 
 ---
 
+## Pre-flight Check (Auto-Install)
+
+**Before anything else**, check if the project structure has been initialized:
+
+1. **Check** if `project.md` exists in the current working directory
+2. **If `project.md` does NOT exist** — the framework installer has not been run yet:
+   a. Inform the user: "The project is not initialized yet. I'll set it up for you."
+   b. Ask the user for the **project name** using AskUserQuestion
+   c. Locate `install.sh` by checking these paths in order:
+      - `~/.sdd-framework/install.sh`
+      - Relative to the skill file: walk up from `.claude/skills/project-bootstrap/` to the framework root
+   d. Run: `bash /path/to/install.sh "ProjectName"`
+   e. Tell the user:
+      > **Setup complete!** The project structure and all skills have been installed.
+      > **Close and reopen Claude Code**, then run `/project-bootstrap` again to process your intake materials.
+      > If you haven't already, drop your project materials (docs, specs, notes, screenshots) into the `intake/` folder before restarting.
+   f. **STOP here** — do NOT proceed with the steps below. The session must be restarted for Claude Code to detect the newly installed skills.
+3. **If `project.md` exists** — proceed normally with Step 1 below.
+
+---
+
 ## Step-by-Step Execution
 
 This workflow uses **micro-file architecture**: each phase is a separate file loaded just-in-time. This keeps the context focused and prevents instruction degradation.
