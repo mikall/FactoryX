@@ -129,6 +129,22 @@ When Tier 2 - Governed is selected, the following additional requirements apply:
 | `/quick-fix` | BF | Diagnosis, fix, test, testbook update |
 | `/help` | Any | Inspects project state, suggests next step |
 
+### Workflow Continuity
+
+When a skill completes, **do NOT just tell the user which skill to run next and stop.** Instead:
+
+1. Summarize what was accomplished
+2. State what the logical next step is
+3. **Ask the user if you should proceed** (e.g., "Procedo con `/requirements-analysis`?")
+4. If the user confirms, **invoke the next skill directly** — do not wait for the user to type the command
+
+Standard flow:
+```
+/project-bootstrap → /sprint-planning → /requirements-analysis → /sprint-execution
+```
+
+The user should never need to manually type a skill command unless they want to skip ahead, go back, or start a non-linear workflow.
+
 ---
 
 ## AGENTS
